@@ -1,0 +1,11 @@
+﻿RecetasController:
+
+foreach (Receta receta in todasLasRecetas)
+            {
+                if (receta.IngredientePrincipal.ToUpper().Contains(ingrediente.ToUpper())
+                    || receta.IngredientesSecundarios.ToUpper().Contains(ingrediente.ToUpper())
+                    || receta.IngredientesTerciarios.ToUpper().Contains(ingrediente.ToUpper()))
+                {
+                    resultados.Add(receta);
+                }
+		  }

@@ -1,0 +1,190 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="~/images/banner1.svg" alt="ASP.NET" class="img-responsive" />
+                <div class="carousel-caption" role="option">
+                    <p>
+                        Learn how to build ASP.NET apps that can run anywhere.
+                        <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409">
+                            Learn More
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="~/images/banner2.svg" alt="Visual Studio" class="img-responsive" />
+                <div class="carousel-caption" role="option">
+                    <p>
+                        There are powerful new features in Visual Studio for building modern web apps.
+                        <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525030&clcid=0x409">
+                            Learn More
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="~/images/banner3.svg" alt="Microsoft Azure" class="img-responsive" />
+                <div class="carousel-caption" role="option">
+                    <p>
+                        Learn how Microsoft's Azure cloud platform allows you to build, deploy, and scale web apps.
+                        <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
+                            Learn More
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>*@
+
+<div class="row" id="gridentero">
+    <h2 class="filtros"></h2>
+    <div class="col-md-3" id="fondofiltros">
+        <h5 class="fondofiltros"><strong>Filtrar por tipo:</strong></h5>
+        <div>
+            <p><input type="checkbox" name="italiana" value="false"><strong>Italiana</strong></p>
+            <p><input type="checkbox" name="griega" value="false"><strong>Griega</strong></p>
+            <p><input type="checkbox" name="" value="false"><strong>Mexicana</strong></p>
+            <p><input type="checkbox" name="" value="false"><strong>Picoteo</strong></p>
+            <p><input type="checkbox" name="" value="false"><strong>Bocadillo</strong></p>
+            <p><input type="checkbox" name="" value="false"><strong>Pintxo</strong></p>
+            <p><input type="checkbox" name="" value="false"><strong>Postres</strong></p>
+            <p><input type="checkbox" name="" value="false"><strong>Todo</strong></p>
+            @*<li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>*@
+        </div>
+        <h5><strong>Filtrar por tiempo:</strong></h5>
+        <div>
+            <p><input type="checkbox" name="" value="false"><strong>Rapido</strong></p>
+            <p><input type="checkbox" name="" value="false"><strong>>15 minutos</strong></p>
+            <p><input type="checkbox" name="" value="false"><strong>>30 minutos</strong></p>
+            <p><input type="checkbox" name="" value="false"><strong>>1 hora</strong></p>
+
+            @*<li>Sample pages using ASP.NET Core MVC</li>
+                <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>*@
+        </div>
+        <h5><strong>Filtrar por calorias:</strong></h5>
+        <div>
+            <p><input type="checkbox" name="" value="false"><strong>Hasta 100 cal</strong></p>
+            <p><input type="checkbox" name="" value="false"><strong>>100 cal</strong></p>
+            <p><input type="checkbox" name="" value="false"><strong>>200 cal</strong></p>
+            <p><input type="checkbox" name="" value="false"><strong>>500 cal</strong></p>
+            <p><input type="checkbox" name="" value="false"><strong>>1000 cal</strong></p>
+            @*<li>Sample pages using ASP.NET Core MVC</li>
+                <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>*@
+        </div>
+
+    </div>
+
+    <div class="col-md-9" id="backgroundIngredientes">
+
+        <div class="grid-item">
+            <p class="menu_option">Hortalizas</p><img src="~/images/Iconos/Hortalizas.jpg" />
+            <ul class="Ingredientes">
+                <li class="ingredientesDisponibles">acelgas</li>
+                <li class="ingredientesDisponibles">patatas</li>
+                <li class="ingredientesDisponibles">cebollas</li>
+                <li class="ingredientesDisponibles">aceitunas</li>
+            </ul>
+        </div>
+        <div class="grid-item">
+            <p class="menu_option">Frutas</p><img src="~/images/Iconos/Frutas.jpg" />
+            <ul class="Ingredientes">
+                <li class="ingredientesDisponibles">manzanas</li>
+                <li class="ingredientesDisponibles">peras</li>
+                <li class="ingredientesDisponibles">platanos</li>
+                <li class="ingredientesDisponibles">fresas</li>
+            </ul>
+        </div>
+        <div class="grid-item">
+            <p class="menu_option">Patatas</p><img src="~/images/Iconos/Patatas.jpg" />
+            <ul class="Ingredientes">
+                <li class="ingredientesDisponibles">manzanas</li>
+                <li class="ingredientesDisponibles">peras</li>
+                <li class="ingredientesDisponibles">platanos</li>
+                <li class="ingredientesDisponibles">fresas</li>
+            </ul>
+        </div>
+        <div class="grid-item">
+            <p class="menu_option">Legumbres</p><img src="~/images/Iconos/Legumbres.jpg" />
+        </div>
+        <div class="grid-item">
+            <p class="menu_option">Frutos secos</p><img src="~/images/Iconos/Frutos secos.jpg" />
+        </div>
+        <div class="grid-item">
+            <p class="menu_option">Mermelada</p><img src="~/images/Iconos/Mermeladas.jpg" />
+        </div>
+        <div class="grid-item">
+            <p class="menu_option">Salsas</p><img src="~/images/Iconos/Salsas.jpg" />
+        </div>
+        <div class="grid-item">
+            <p class="menu_option">Panes</p><img src="~/images/Iconos/panes.jpg" />
+        </div>
+        <div class="grid-item"><p class="menu_option">Carne</p><img src="~/images/Iconos/carnes.jpg" />
+        </div>
+        <div class="grid-item"><p class="menu_option">Pescado</p><img src="~/images/Iconos/pescados.jpg" />
+        </div>
+        <div class="grid-item"><p class="menu_option">Huevos</p><img src="~/images/Iconos/huevos.jpg" />
+        </div>
+        <div class="grid-item"><p class="menu_option">Lacteos</p><img src="~/images/Iconos/lacteos.jpg" />
+        </div>
+        <div class="grid-item"><p class="menu_option">Quesos</p><img src="~/images/Iconos/quesos.jpg" />
+        </div>
+        <div class="grid-item"><p class="menu_option">Pastas</p><img src="~/images/Iconos/pasta.jpg" />
+        </div>
+        <div class="grid-item">
+            <p class="menu_option">Aceites</p><img src="~/images/Iconos/aceites.jpg" />
+            <ul class="Ingredientes">
+                <li class="ingredientesDisponibles">Aceite</li>
+                <li class="ingredientesDisponibles">Vinagre</li>
+            </ul>
+        </div>
+        <div class="grid-item"><p class="menu_option">Varios</p><img src="~/images/Iconos/varios.jpg" />
+        </div>
+        <div class="grid-item"><p class="menu_option">Embutidos</p><img src="~/images/Iconos/embutidos.jpg" />
+        </div>
+        <div class="grid-item"><p class="menu_option">Arroces</p><img src="~/images/Iconos/arroces.jpg" />
+        </div>
+        <div class="grid-item"><p class="menu_option">Harinas</p><img src="~/images/Iconos/Harinas.jpg" />
+        </div>
+        <div class="grid-item"><p class="menu_option">Cereales</p><img src="~/images/Iconos/cereales.jpg" />
+        </div>
+        <div class="grid-item"><p class="menu_option">Bebidas</p><img src="~/images/Iconos/bebidas.jpg" />
+        </div>
+        <div class="grid-item">
+            <p class="menu_option">Especias</p><img src="~/images/Iconos/especias.jpg" />
+            <ul class="Ingredientes">
+                <li class="ingredientesDisponibles">sal</li>
+                <li class="ingredientesDisponibles">pimienta</li>
+                <li class="ingredientesDisponibles">oregano</li>
+                <li class="ingredientesDisponibles">curry</li>
+            </ul>
+        </div>
+        <div class="grid-item"><p class="menu_option">Hueco</p><img src="~/images/Iconos/Salsas.jpg" />
+        </div>
+        <div class="grid-item"><p class="menu_option">Hueco</p><img src="~/images/Iconos/panes.jpg" />
+        </div>
+
+        <div>
+            <a href="#" name="buscarReceta" class="btn btn-default">Buscar Receta</a>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/js/menu_principal.js"></script>
