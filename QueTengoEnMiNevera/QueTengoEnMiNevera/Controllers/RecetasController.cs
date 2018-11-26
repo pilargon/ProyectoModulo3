@@ -44,7 +44,7 @@ namespace QueTengoEnMiNevera.Controllers
             //Request.Q
             //foreach (string key in Request.Query)
             //{
-            //    var value = Request.QueryString[key];
+            //    var value = Request.QueryString[key] ;
             //}
             List<Receta> resultados = new List<Receta>();
             List<Receta> todasLasRecetas = await _context.Receta.ToListAsync();
