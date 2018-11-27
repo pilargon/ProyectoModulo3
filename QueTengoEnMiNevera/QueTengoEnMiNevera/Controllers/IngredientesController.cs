@@ -7,28 +7,25 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using QueTengoEnMiNevera.Data;
 using QueTengoEnMiNevera.Models;
-using QueTengoEnMiNevera.Services;
 
 namespace QueTengoEnMiNevera.Controllers
 {
-    public class RecetasController : Controller
+    public class IngredientesController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly QTEMNServices _services;
 
-        public RecetasController(ApplicationDbContext context, QTEMNServices services)
+        public IngredientesController(ApplicationDbContext context)
         {
             _context = context;
-            _services = services;
         }
 
-        // GET: Recetas
+        // GET: Ingredientes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Receta.ToListAsync());
+            return View(await _context.Ingrediente.ToListAsync());
         }
 
-        // GET: Recetas/Details/5
+        // GET: Ingredientes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,46 +33,39 @@ namespace QueTengoEnMiNevera.Controllers
                 return NotFound();
             }
 
-            var receta = await _context.Receta
+            var ingrediente = await _context.Ingrediente
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (receta == null)
+            if (ingrediente == null)
             {
                 return NotFound();
             }
 
-            return View(receta);
+            return View(ingrediente);
         }
 
-        // GET: Recetas/Create
+        // GET: Ingredientes/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        public async Task<IActionResult> Buscar([FromQuery] string[] ingrediente)
-        {
-
-            List<Receta> recetas = await _services.BuscarRecetasPorIngredientes(ingrediente);
-            return View(recetas);
-        }
-
-        // POST: Recetas/Create
+        // POST: Ingredientes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nombre,Calorias,Tiempo,Explicacion,Tipo,Foto,IngredientePrincipal,IngredientesSecundarios,IngredientesTerciarios")] Receta receta)
+        public async Task<IActionResult> Create([Bind("Id,Nombre,Foto")] Ingrediente ingrediente)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(receta);
+                _context.Add(ingrediente);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(receta);
+            return View(ingrediente);
         }
 
-        // GET: Recetas/Edit/5
+        // GET: Ingredientes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -83,22 +73,22 @@ namespace QueTengoEnMiNevera.Controllers
                 return NotFound();
             }
 
-            var receta = await _context.Receta.FindAsync(id);
-            if (receta == null)
+            var ingrediente = await _context.Ingrediente.FindAsync(id);
+            if (ingrediente == null)
             {
                 return NotFound();
             }
-            return View(receta);
+            return View(ingrediente);
         }
 
-        // POST: Recetas/Edit/5
+        // POST: Ingredientes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Calorias,Tiempo,Explicacion,Tipo,Foto,IngredientePrincipal,IngredientesSecundarios,IngredientesTerciarios")] Receta receta)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Foto")] Ingrediente ingrediente)
         {
-            if (id != receta.Id)
+            if (id != ingrediente.Id)
             {
                 return NotFound();
             }
@@ -107,12 +97,12 @@ namespace QueTengoEnMiNevera.Controllers
             {
                 try
                 {
-                    _context.Update(receta);
+                    _context.Update(ingrediente);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RecetaExists(receta.Id))
+                    if (!IngredienteExists(ingrediente.Id))
                     {
                         return NotFound();
                     }
@@ -123,10 +113,10 @@ namespace QueTengoEnMiNevera.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(receta);
+            return View(ingrediente);
         }
 
-        // GET: Recetas/Delete/5
+        // GET: Ingredientes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,30 +124,30 @@ namespace QueTengoEnMiNevera.Controllers
                 return NotFound();
             }
 
-            var receta = await _context.Receta
+            var ingrediente = await _context.Ingrediente
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (receta == null)
+            if (ingrediente == null)
             {
                 return NotFound();
             }
 
-            return View(receta);
+            return View(ingrediente);
         }
 
-        // POST: Recetas/Delete/5
+        // POST: Ingredientes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var receta = await _context.Receta.FindAsync(id);
-            _context.Receta.Remove(receta);
+            var ingrediente = await _context.Ingrediente.FindAsync(id);
+            _context.Ingrediente.Remove(ingrediente);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool RecetaExists(int id)
+        private bool IngredienteExists(int id)
         {
-            return _context.Receta.Any(e => e.Id == id);
+            return _context.Ingrediente.Any(e => e.Id == id);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿RecetasController:
+﻿SWServices:
 
 foreach (Receta receta in todasLasRecetas)
             {
@@ -9,3 +9,11 @@ foreach (Receta receta in todasLasRecetas)
                     resultados.Add(receta);
                 }
 		  }
+
+2:Pasar una lista al añadir ingrediente,que vaya al Service y ahi buscar
+-Si el ingrediente esta en la receta (Contains)
+-Aplicar criterio de busqueda
+
+3:Mostrar la lista en vista recetas
+
+

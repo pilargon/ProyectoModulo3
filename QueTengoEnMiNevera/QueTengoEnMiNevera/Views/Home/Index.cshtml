@@ -96,11 +96,11 @@
         <div class="grid-item">
             <p class="menu_option">Hortalizas</p><img src="~/images/Iconos/Hortalizas.jpg" />
             <ul class="Ingredientes">
-                <li class="ingredientesDisponibles">acelgas</li>
-                <li class="ingredientesDisponibles">patatas</li>
-                <li class="ingredientesDisponibles">cebollas</li>
-                <li class="ingredientesDisponibles">aceitunas</li>
-            </ul>
+                <a href=""><li class="ingredientesDisponibles">acelgas</li></a>
+                <a href=""><li class="ingredientesDisponibles">patatas</li></a>
+                <a href=""><li class="ingredientesDisponibles">cebollas</li></a>
+                    <li class="ingredientesDisponibles">aceitunas</li>
+</ul>
         </div>
         <div class="grid-item">
             <p class="menu_option">Frutas</p><img src="~/images/Iconos/Frutas.jpg" />
@@ -169,7 +169,7 @@
         <div class="grid-item">
             <p class="menu_option">Especias</p><img src="~/images/Iconos/especias.jpg" />
             <ul class="Ingredientes">
-                <li class="ingredientesDisponibles">sal</li>
+                <a href=""> <li class="ingredientesDisponibles">sal</li></a>
                 <li class="ingredientesDisponibles">pimienta</li>
                 <li class="ingredientesDisponibles">oregano</li>
                 <li class="ingredientesDisponibles">curry</li>
@@ -181,7 +181,8 @@
         </div>
 
         <div>
-            <a href="#" name="buscarReceta" class="btn btn-default">Buscar Receta</a>
+            <a asp-controller="RecetasController" asp-action="Buscar" method="post" name="buscarReceta" class="btn btn-default">Buscar Receta</a>
+            //TODO:ASOCIAR EL BOTON A LA ACCION Y RECOPILAR PARAMETROS.
         </div>
     </div>
 
