@@ -10,8 +10,8 @@ using QueTengoEnMiNevera.Data;
 namespace QueTengoEnMiNevera.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181126173422_boton")]
-    partial class boton
+    [Migration("20181129195534_contrasena")]
+    partial class contrasena
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -257,7 +257,7 @@ namespace QueTengoEnMiNevera.Data.Migrations
 
                     b.Property<string>("Nombre");
 
-                    b.Property<int>("Tiempo");
+                    b.Property<string>("Tiempo");
 
                     b.Property<string>("Tipo");
 

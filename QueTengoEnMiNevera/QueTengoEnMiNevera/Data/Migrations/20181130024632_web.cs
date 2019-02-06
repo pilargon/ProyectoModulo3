@@ -2,7 +2,7 @@
 
 namespace QueTengoEnMiNevera.Data.Migrations
 {
-    public partial class boton : Migration
+    public partial class web : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

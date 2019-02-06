@@ -1,30 +1,25 @@
 ﻿@inject QueTengoEnMiNevera.Services.QTEMNServices Services
 @{
-    ViewData["Title"] = "Contact";
+    ViewData["Title"] = "Contacto";
 }
 
+<div class="col-md" id="infoContact">
+    <div class="content">
+        <h2>@ViewData["Title"]</h2>
+        @*<h3>@ViewData["Message"]</h3>*@
 
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+        
 
-@{
-    List<Receta> recetas = Services.GetRecetasDB();
-    <ul>
-        @foreach (Receta receta in recetas)
-        {
-            <li>@receta.Nombre</li>
-        }
-    </ul>
-}
+        <address>
+            <br />Pilar González Clavaín<br />
+            Calle Ejemplo,1<br />
+            Lekeitio, WA 98052-6399<br />
+            <abbr title="Phone">P:</abbr>
+            425.555.0100
+        </address>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+        <address>
+            <strong>Contacto:</strong> <a href="https://www.linkedin.com/in/pilargonzalezclavain/">LinkedIn</a><br />
+        </address>
+    </div>
+</div>

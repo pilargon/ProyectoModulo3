@@ -1,7 +1,20 @@
 ﻿@{
-    ViewData["Title"] = "About";
+    ViewData["Title"] = "Información de búsqueda";
 }
 <h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
-
-<p>Use this area to provide additional information.</p>
+@*<h3>@ViewData["Message"]</h3>*@
+<div class="col-md" id="infoAbout">
+    <div class="content">
+        <p>Alguna vez has llegado a tu casa,has abierto la nevera y has pensado <strong>QUÉ TENGO EN MI NEVERA</strong>?</p><br />
+        <p>Mi idea era crear una web de búsqueda de recetas al contrario de lo habitual. En vez de coger un libro y mirar qúe quiero hacer,vamos a ver <strong>QUÉ TENGO EN MI NEVERA</strong> y con eso plantear todas las recetas posibles.</p>
+        <p>El criterio de búsqueda es sencillo:</p><br />
+        <p>He planteado 3 tipos de ingredientes según el grado de importancia en la receta.</p>
+        <p>Están los <strong>ingredientes principales</strong>,sin los cuales no tiene sentido hacer el plato si no los tienes.</p>
+        <p>Están los <strong>ingredientes secundarios</strong> que son importantes pero no son estrictamente necesarios ya que con un poco de imaginación se puede sustituir por algo similar.</p>
+        <p>Por último los <strong>ingredientes terciarios</strong> que no influyen en el algoritmo de búsqueda porque considero que todos tenemos en la cocina,y quizás por eso no lo has marcado.No quiero que no te salga una estupenda receta sólo porque te has olvidado marcar que efectivamente tienes sal.</p><br />
+        <p>Con todo eso,para que salga un resultado de receta tienes que tener TODOS los <strong>ingredientes principales</strong>,al menos la MITAD de los <strong>ingredientes secundarios</strong> y no considera los <strong>terciarios</strong></p>
+        <p>Además a la izquierda tienes restricciones de búsqueda,si quieres un criterio en específico,no tienes más que marcar.Si no marcas nada,verás todo.</p><br />
+        <p>Espero que las recetas sean de tu agrado y que hayas aprendido a hacer cosas nuevas.</p>
+        <p>A que nunca habías pensado en todo el potencial que tenía tu nevera?</p>
+    </div>
+</div>

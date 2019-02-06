@@ -10,14 +10,14 @@ using QueTengoEnMiNevera.Data;
 namespace QueTengoEnMiNevera.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181125185256_i")]
-    partial class i
+    [Migration("20181129152944_2")]
+    partial class _2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.3-rtm-32065")
+                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -257,7 +257,7 @@ namespace QueTengoEnMiNevera.Data.Migrations
 
                     b.Property<string>("Nombre");
 
-                    b.Property<int>("Tiempo");
+                    b.Property<string>("Tiempo");
 
                     b.Property<string>("Tipo");
 

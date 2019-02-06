@@ -4,80 +4,34 @@
     ViewData["Title"] = "Buscar";
 }
 
-<h2>Buscar</h2>
+<h2>Resultados de la búsqueda</h2>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Calorias)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tiempo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Explicacion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Tipo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Foto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IngredientePrincipal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IngredientesSecundarios)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IngredientesTerciarios)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Calorias)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tiempo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Explicacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Foto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IngredientePrincipal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IngredientesSecundarios)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IngredientesTerciarios)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="row" id="rowbuscar">
+
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4" id="recetaBuscar">
+            <div class="content">
+                <img src="~/images/Fotos recetas/@Html.DisplayFor(modelItem => item.Foto)" width="250" height="250" style="width:100%" class="imagenBuscar img-responsive"
+                     onclick="location.href='Details/@item.Id'" />
+
+                <h3>@Html.DisplayFor(modelItem => item.Nombre)</h3>
+
+                <span class="glyphicon glyphicon-cutlery" > @Html.DisplayFor(modelItem => item.Calorias)Calorías </span>
+                <span class="glyphicon glyphicon-time" > @Html.DisplayFor(modelItem => item.Tiempo)minutos</span>
+                <span class="glyphicon glyphicon-globe" > @Html.DisplayFor(modelItem => item.Tipo)</span>
+
+                @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |*@
+                @*<a asp-action="Details" asp-route-id="@item.Id">Ver Receta</a>*@ 
+                @*<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>|*@
+            </div>
+        </div>
+    }
+
+</div>
+
+
+

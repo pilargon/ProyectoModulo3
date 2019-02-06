@@ -1,19 +1,100 @@
-﻿SWServices:
+﻿QTEMNServices.cs
 
-foreach (Receta receta in todasLasRecetas)
+public async Task<List<Receta>> BuscarRecetasPorIngredientes(string[] ingredientes)
+        {
+            List<string> listaIngredientes = ingredientes.ToList();
+            List<Receta> resultados = new List<Receta>();
+            List<Receta> todasLasRecetas = await _context.Receta.ToListAsync();
+
+            int ingredientesEnReceta = 0;
+            foreach (Receta receta in todasLasRecetas)
             {
-                if (receta.IngredientePrincipal.ToUpper().Contains(ingrediente.ToUpper())
-                    || receta.IngredientesSecundarios.ToUpper().Contains(ingrediente.ToUpper())
-                    || receta.IngredientesTerciarios.ToUpper().Contains(ingrediente.ToUpper()))
+                ingredientesEnReceta = 0;
+                foreach (string ingrediente in listaIngredientes)
                 {
-                    resultados.Add(receta);
+                    //este for tiene funcion de contador de ingredientes que coinciden entre cada receta y 
+                    //los ingredientes introducidos por el usuario.
+                    for (int i = 0; i < listaIngredientes.Count(); i++)
+                    {
+
+                        if (receta.IngredientePrincipal.ToUpper().Contains(ingrediente.ToUpper())
+                        || receta.IngredientesSecundarios.ToUpper().Contains(ingrediente.ToUpper())
+                        || receta.IngredientesTerciarios.ToUpper().Contains(ingrediente.ToUpper()))
+                        {
+
+                            ingredientesEnReceta++;
+                        }
+                    }
                 }
-		  }
 
-2:Pasar una lista al añadir ingrediente,que vaya al Service y ahi buscar
--Si el ingrediente esta en la receta (Contains)
--Aplicar criterio de busqueda
+                //AQUI CONTAMOS TODOS LOS INGREDIENTES DE LA RECETA PERO NO INCLUIMOS LOS TERCIARIOS
+                string cadenaTotal = receta.IngredientePrincipal + receta.IngredientesSecundarios;
+                string[] separadasTotal;
+                separadasTotal = cadenaTotal.Split(',');
+                int numeroIngredientesTotalesReceta = separadasTotal.Count() + 1;//AQUI TENEMOS QUE SUMAR UNO 
+                //PORQUE ENTRE EL PRINCIPAL Y EL SECUNDARIO NO HAY COMA
 
-3:Mostrar la lista en vista recetas
 
+                //FILTRO
+                int contadorPrincipal = 0;
+                foreach (string ingrediente in listaIngredientes)
+                {
+                    if (receta.IngredientePrincipal.ToUpper().Contains(ingrediente.ToUpper()) && ingredientesEnReceta >= numeroIngredientesTotalesReceta / 2)
+                    {
+                        contadorPrincipal++;
 
+                        //AQUI LO QUE HACEMOS ES SEPARAR LOS INGREDIENTES DE LA CADENA LOCALIZANDO LAS COMAS.
+                        string cadenaPral = receta.IngredientePrincipal;
+                        string[] separadasPral;
+                        separadasPral = cadenaPral.Split(',');
+
+                        //SOLAMENTE SI ESTAN TODOS LOS INGREDIENTES PRINCIPALES PASA
+                        int numeroIngredientesPrincipales = separadasPral.Count();
+                        if (contadorPrincipal == numeroIngredientesPrincipales)
+
+                        {
+                            resultados.Add(receta);
+                        }
+                    }
+                }
+
+            }
+            return resultados;
+        }
+
+        //Haciendo pruebas
+        public async Task<List<Receta>> BuscarRecetasPorFiltros(string[] filtros)
+        {
+            List<string> listaFiltros = filtros.ToList();
+
+            // https://localhost:44341/NombreControlador/NombreAccion/?ingredientes=sal&ingredientes=azucar
+          
+            List<Receta> resultadosFiltros = new List<Receta>();
+            List<Receta> todasLasRecetas = await _context.Receta.ToListAsync();
+
+            foreach (Receta receta in todasLasRecetas)
+            {
+                foreach (string filtro in listaFiltros)
+                {
+                    //for (int i = 0; i < listaFiltros.Count(); i++)
+                    //{
+                        if (receta.Calorias.ToUpper().Contains(filtro.ToUpper()))
+                        {
+                            resultadosFiltros.Add(receta);
+                        }
+                        else if (receta.Tiempo.Equals(filtro))
+                        {
+                            resultadosFiltros.Add(receta);
+                        }
+                        else if (receta.Tipo.ToUpper().Contains(filtro.ToUpper()))
+                        {
+                            resultadosFiltros.Add(receta);
+                        }
+                    //}
+                }
+
+            }
+            return resultadosFiltros;
+        }
+    }
+}

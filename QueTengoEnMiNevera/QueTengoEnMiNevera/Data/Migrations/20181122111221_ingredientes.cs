@@ -7,11 +7,7 @@ namespace QueTengoEnMiNevera.Data.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<int>(
-                name: "Tiempo",
-                table: "Receta",
-                nullable: false,
-                oldClrType: typeof(DateTime));
+          
 
             migrationBuilder.AddColumn<string>(
                 name: "IngredientePrincipal",
@@ -43,11 +39,7 @@ namespace QueTengoEnMiNevera.Data.Migrations
                 name: "IngredientesTerciarios",
                 table: "Receta");
 
-            migrationBuilder.AlterColumn<DateTime>(
-                name: "Tiempo",
-                table: "Receta",
-                nullable: false,
-                oldClrType: typeof(int));
+     
         }
     }
 }

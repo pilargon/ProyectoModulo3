@@ -3,70 +3,50 @@
 @{
     ViewData["Title"] = "Details";
 }
-
-<h2>Details</h2>
-
 <div>
-    <h4>Receta</h4>
+    <h3><strong>@Html.DisplayFor(model => model.Nombre)</strong></h3>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Calorias)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Calorias)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Tiempo)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Tiempo)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Explicacion)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Explicacion)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Tipo)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Tipo)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Foto)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Foto)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.IngredientePrincipal)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.IngredientePrincipal)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.IngredientesSecundarios)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.IngredientesSecundarios)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.IngredientesTerciarios)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.IngredientesTerciarios)
-        </dd>
-    </dl>
+
+    <div class="row">
+        <div class="col-md-6" id="fotodetalles">
+            <div>
+                <img src="~/images/Fotos recetas/@Html.DisplayFor(model => model.Foto)" position="center" style="width:100%"class="img-responsive"/>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <span class="glyphicon glyphicon-cutlery"><strong>@Html.DisplayFor(model => model.Calorias) Calorías</strong></span>
+                </div>
+                <div class="col-md-3">
+                    <span class="glyphicon glyphicon-time"><strong>@Html.DisplayFor(model => model.Tiempo) Minutos</strong></span>
+                </div>
+                <div class="col-md-3">
+                    <span class="glyphicon glyphicon-globe"><strong>Tipo @Html.DisplayFor(model => model.Tipo)</strong></span>
+                </div>
+            </div>
+        </div>
+        <div id="textoDetalles" class="row col-md-6">
+            <div class="col-md-4">
+                <h4><strong>Ingredientes</strong></h4>
+                <div>
+                    @Html.DisplayFor(model => model.IngredientePrincipal)
+                </div>
+                <div>
+                    @Html.DisplayFor(model => model.IngredientesSecundarios)
+                </div>
+                <div>
+                    @Html.DisplayFor(model => model.IngredientesTerciarios)
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h4><strong>Preparación</strong></h4>
+                <div>
+                    @Html.DisplayFor(model => model.Explicacion)
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Lista</a>
 </div>

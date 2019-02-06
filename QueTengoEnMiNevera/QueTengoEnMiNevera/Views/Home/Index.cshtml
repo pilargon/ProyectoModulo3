@@ -2,190 +2,230 @@
     ViewData["Title"] = "Home Page";
 }
 
-@*<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img src="~/images/banner1.svg" alt="ASP.NET" class="img-responsive" />
-                <div class="carousel-caption" role="option">
-                    <p>
-                        Learn how to build ASP.NET apps that can run anywhere.
-                        <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409">
-                            Learn More
-                        </a>
-                    </p>
-                </div>
+
+<form action="~/Recetas/Buscar">
+    <div class="row" id="gridentero">
+        <div class="col-md-3" id="fondofiltros">
+            <h2 class="filtros"></h2>
+            <h5 class="fondofiltros"><strong>Filtrar por tipo:</strong></h5>
+            <div>
+                <p><input type="checkbox" name="filtro" value="italiana"><strong>Italiana</strong></p>
+                <p><input type="checkbox" name="filtro" value="vegana"><strong>Vegana</strong></p>
+                <p><input type="checkbox" name="filtro" value="mexicana"><strong>Mexicana</strong></p>
+                <p><input type="checkbox" name="filtro" value="picoteo"><strong>Picoteo</strong></p>
+                <p><input type="checkbox" name="filtro" value="pintxo"><strong>Pintxo</strong></p>
+                <p><input type="checkbox" name="filtro" value="postre"><strong>Postres</strong></p>
+                <p><input type="checkbox" name="filtro" value="inglesa"><strong>Inglesa</strong></p>
             </div>
-            <div class="item">
-                <img src="~/images/banner2.svg" alt="Visual Studio" class="img-responsive" />
-                <div class="carousel-caption" role="option">
-                    <p>
-                        There are powerful new features in Visual Studio for building modern web apps.
-                        <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525030&clcid=0x409">
-                            Learn More
-                        </a>
-                    </p>
-                </div>
+            <h5><strong>Filtrar por tiempo:</strong></h5>
+            <div>
+                <p><input type="checkbox" name="filtro" value="3||5"><strong>Rapido</strong></p>
+                <p><input type="checkbox" name="filtro" value="15||30||60"><strong>>15 minutos</strong></p>
+                <p><input type="checkbox" name="filtro" value="30||60"><strong>>30 minutos</strong></p>
+                <p><input type="checkbox" name="filtro" value="60"><strong>>1 hora</strong></p>
+
             </div>
-            <div class="item">
-                <img src="~/images/banner3.svg" alt="Microsoft Azure" class="img-responsive" />
-                <div class="carousel-caption" role="option">
-                    <p>
-                        Learn how Microsoft's Azure cloud platform allows you to build, deploy, and scale web apps.
-                        <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
-                            Learn More
-                        </a>
-                    </p>
-                </div>
+            <h5><strong>Filtrar por calorias:</strong></h5>
+            <div>
+                <p><input type="checkbox" name="filtro" value="<100"><strong>Hasta 100 cal</strong></p>
+                <p><input type="checkbox" name="filtro" value=">100"><strong>>100 cal</strong></p>
+                <p><input type="checkbox" name="filtro" value=">200"><strong>>200 cal</strong></p>
+                <p><input type="checkbox" name="filtro" value=">500"><strong>>500 cal</strong></p>
+                <p><input type="checkbox" name="filtro" value=">1000"><strong>>1000 cal</strong></p>
+
             </div>
         </div>
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>*@
 
-<div class="row" id="gridentero">
-    <h2 class="filtros"></h2>
-    <div class="col-md-3" id="fondofiltros">
-        <h5 class="fondofiltros"><strong>Filtrar por tipo:</strong></h5>
-        <div>
-            <p><input type="checkbox" name="italiana" value="false"><strong>Italiana</strong></p>
-            <p><input type="checkbox" name="griega" value="false"><strong>Griega</strong></p>
-            <p><input type="checkbox" name="" value="false"><strong>Mexicana</strong></p>
-            <p><input type="checkbox" name="" value="false"><strong>Picoteo</strong></p>
-            <p><input type="checkbox" name="" value="false"><strong>Bocadillo</strong></p>
-            <p><input type="checkbox" name="" value="false"><strong>Pintxo</strong></p>
-            <p><input type="checkbox" name="" value="false"><strong>Postres</strong></p>
-            <p><input type="checkbox" name="" value="false"><strong>Todo</strong></p>
-            @*<li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>*@
-        </div>
-        <h5><strong>Filtrar por tiempo:</strong></h5>
-        <div>
-            <p><input type="checkbox" name="" value="false"><strong>Rapido</strong></p>
-            <p><input type="checkbox" name="" value="false"><strong>>15 minutos</strong></p>
-            <p><input type="checkbox" name="" value="false"><strong>>30 minutos</strong></p>
-            <p><input type="checkbox" name="" value="false"><strong>>1 hora</strong></p>
+        @*INGREDIENTES*@
+        <div class="col-md-9" id="backgroundIngredientes">
 
-            @*<li>Sample pages using ASP.NET Core MVC</li>
-                <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>*@
-        </div>
-        <h5><strong>Filtrar por calorias:</strong></h5>
-        <div>
-            <p><input type="checkbox" name="" value="false"><strong>Hasta 100 cal</strong></p>
-            <p><input type="checkbox" name="" value="false"><strong>>100 cal</strong></p>
-            <p><input type="checkbox" name="" value="false"><strong>>200 cal</strong></p>
-            <p><input type="checkbox" name="" value="false"><strong>>500 cal</strong></p>
-            <p><input type="checkbox" name="" value="false"><strong>>1000 cal</strong></p>
-            @*<li>Sample pages using ASP.NET Core MVC</li>
-                <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>*@
-        </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/Hortalizas.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="cebollas" name="ingrediente" />cebollas</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="pepinos" name="ingrediente" />pepinos</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="tomates" name="ingrediente" />tomates</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="tomate cherry" name="ingrediente" />tomate cherry</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="lechuga" name="ingrediente" />lechuga</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="apio" name="ingrediente" />apio</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="zanahoria" name="ingrediente" />zanahoria</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="pimientos" name="ingrediente" />pimientos</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="patatas" name="ingrediente" />patatas</li>
 
+                </ul>
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/Frutas.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="platanos" name="ingrediente" />platanos</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="fresas" name="ingrediente" />fresas</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="manzanas" name="ingrediente" />manzanass</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="peras" name="ingrediente" />peras</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="frutos rojos" name="ingrediente" />frutos rojos</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="frambuesas" name="ingrediente" />frambuesas</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="moras" name="ingrediente" />moras</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="arandanos" name="ingrediente" />arandanos</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="naranja" name="ingrediente" />naranjas</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="limon" name="ingrediente" />limon</li>
+                </ul>
+            </div>
+
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/Legumbres.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="guisantes" name="ingrediente" />guisantes</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="frijoles" name="ingrediente" />frijoles</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="judias" name="ingrediente" />judias</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="chiles" name="ingrediente" />chiles</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/Frutos secos.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="piñones" name="ingrediente" />piñones</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="almendras" name="ingrediente" />almendras</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="cacahuetes" name="ingrediente" />cacahuetes</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="pistachos" name="ingrediente" />pistachos</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/Mermeladas.jpg" class="img-responsive" />
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/Salsas.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="guacamole" name="ingrediente" />guacamole</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="nata" name="ingrediente" />nata</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="salsa de rabanos" name="ingrediente" />salsa de rabanos</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="tirabeques" name="ingrediente" />tirabeques</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/panes.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="pan" name="ingrediente" />pan</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="pan molde" name="ingrediente" />pan molde</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="galletas" name="ingrediente" />galletas</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="blinis" name="ingrediente" />blinis</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/carnes.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="cerdo" name="ingrediente" />cerdo</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="pollo" name="ingrediente" />pollo</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="carne picada" name="ingrediente" />carne picada</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="salchichas" name="ingrediente" />salchichas</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/pescados.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="salmon ahumado" name="ingrediente" />salmon ahumado</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="atun" name="ingrediente" />atun</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="gambas" name="ingrediente" />gambas</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/huevos.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="huevos" name="ingrediente" />huevos</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/lacteos.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="leche" name="ingrediente" />leche</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="yogur" name="ingrediente" />yogur</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/quesos.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="queso" name="ingrediente" />queso</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="queso feta" name="ingrediente" />queso feta</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/especias.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="sal" name="ingrediente" />sal</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="azucar" name="ingrediente" />azucar</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="menta" name="ingrediente" />menta</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="pimienta negra" name="ingrediente" />pimienta negra</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="perejil" name="ingrediente" />perejil</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="oregano" name="ingrediente" />jenjibre</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="cilantro" name="ingrediente" />cilantro</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/aceites.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="aceite" name="ingrediente" />aceite</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="vinagre" name="ingrediente" />vinagre</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="aceite de semillas" name="ingrediente" />aceite de semillas</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/varios.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="setian" name="ingrediente" />setian</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="totopos" name="ingrediente" />totopos</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="brotes de soja" name="ingrediente" />brotes de soja</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="palitos" name="ingrediente" />palitos</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="hielo" name="ingrediente" />hielo</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="copos" name="ingrediente" />copos</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/embutidos.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="jamon" name="ingrediente" />jamon</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="chorizo" name="ingrediente" />chorizo</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/arroces.jpg" class="img-responsive" />
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/Harinas.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="arroz" name="ingrediente" />arroz</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="harina" name="ingrediente" />harina</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="harina de maiz" name="ingrediente" />harina de maiz</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/cereales.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="copos de patatas" name="ingrediente" />copos de patatas</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="corn flakes" name="ingrediente" />corn flakes</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/bebidas.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="tequila" name="ingrediente" />tequila</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="cointreau" name="ingrediente" />cointreau</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/pasta.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="pasta" name="ingrediente" />pasta</li>
+                    <li class="ingredientesDisponibles"><input type="checkbox" value="espaguetis" name="ingrediente" />espaguetis</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <p class="menu_option"></p><img src="~/images/Iconos/Patatas.jpg" class="img-responsive" />
+                <ul class="Ingredientes">
+                </ul>
+            </div>
+            <div>
+                <input type="submit" class="btn btn-default" value="Buscar Receta">
+            </div>
+
+        </div>
     </div>
-
-    <div class="col-md-9" id="backgroundIngredientes">
-
-        <div class="grid-item">
-            <p class="menu_option">Hortalizas</p><img src="~/images/Iconos/Hortalizas.jpg" />
-            <ul class="Ingredientes">
-                <a href=""><li class="ingredientesDisponibles">acelgas</li></a>
-                <a href=""><li class="ingredientesDisponibles">patatas</li></a>
-                <a href=""><li class="ingredientesDisponibles">cebollas</li></a>
-                    <li class="ingredientesDisponibles">aceitunas</li>
-</ul>
-        </div>
-        <div class="grid-item">
-            <p class="menu_option">Frutas</p><img src="~/images/Iconos/Frutas.jpg" />
-            <ul class="Ingredientes">
-                <li class="ingredientesDisponibles">manzanas</li>
-                <li class="ingredientesDisponibles">peras</li>
-                <li class="ingredientesDisponibles">platanos</li>
-                <li class="ingredientesDisponibles">fresas</li>
-            </ul>
-        </div>
-        <div class="grid-item">
-            <p class="menu_option">Patatas</p><img src="~/images/Iconos/Patatas.jpg" />
-            <ul class="Ingredientes">
-                <li class="ingredientesDisponibles">manzanas</li>
-                <li class="ingredientesDisponibles">peras</li>
-                <li class="ingredientesDisponibles">platanos</li>
-                <li class="ingredientesDisponibles">fresas</li>
-            </ul>
-        </div>
-        <div class="grid-item">
-            <p class="menu_option">Legumbres</p><img src="~/images/Iconos/Legumbres.jpg" />
-        </div>
-        <div class="grid-item">
-            <p class="menu_option">Frutos secos</p><img src="~/images/Iconos/Frutos secos.jpg" />
-        </div>
-        <div class="grid-item">
-            <p class="menu_option">Mermelada</p><img src="~/images/Iconos/Mermeladas.jpg" />
-        </div>
-        <div class="grid-item">
-            <p class="menu_option">Salsas</p><img src="~/images/Iconos/Salsas.jpg" />
-        </div>
-        <div class="grid-item">
-            <p class="menu_option">Panes</p><img src="~/images/Iconos/panes.jpg" />
-        </div>
-        <div class="grid-item"><p class="menu_option">Carne</p><img src="~/images/Iconos/carnes.jpg" />
-        </div>
-        <div class="grid-item"><p class="menu_option">Pescado</p><img src="~/images/Iconos/pescados.jpg" />
-        </div>
-        <div class="grid-item"><p class="menu_option">Huevos</p><img src="~/images/Iconos/huevos.jpg" />
-        </div>
-        <div class="grid-item"><p class="menu_option">Lacteos</p><img src="~/images/Iconos/lacteos.jpg" />
-        </div>
-        <div class="grid-item"><p class="menu_option">Quesos</p><img src="~/images/Iconos/quesos.jpg" />
-        </div>
-        <div class="grid-item"><p class="menu_option">Pastas</p><img src="~/images/Iconos/pasta.jpg" />
-        </div>
-        <div class="grid-item">
-            <p class="menu_option">Aceites</p><img src="~/images/Iconos/aceites.jpg" />
-            <ul class="Ingredientes">
-                <li class="ingredientesDisponibles">Aceite</li>
-                <li class="ingredientesDisponibles">Vinagre</li>
-            </ul>
-        </div>
-        <div class="grid-item"><p class="menu_option">Varios</p><img src="~/images/Iconos/varios.jpg" />
-        </div>
-        <div class="grid-item"><p class="menu_option">Embutidos</p><img src="~/images/Iconos/embutidos.jpg" />
-        </div>
-        <div class="grid-item"><p class="menu_option">Arroces</p><img src="~/images/Iconos/arroces.jpg" />
-        </div>
-        <div class="grid-item"><p class="menu_option">Harinas</p><img src="~/images/Iconos/Harinas.jpg" />
-        </div>
-        <div class="grid-item"><p class="menu_option">Cereales</p><img src="~/images/Iconos/cereales.jpg" />
-        </div>
-        <div class="grid-item"><p class="menu_option">Bebidas</p><img src="~/images/Iconos/bebidas.jpg" />
-        </div>
-        <div class="grid-item">
-            <p class="menu_option">Especias</p><img src="~/images/Iconos/especias.jpg" />
-            <ul class="Ingredientes">
-                <a href=""> <li class="ingredientesDisponibles">sal</li></a>
-                <li class="ingredientesDisponibles">pimienta</li>
-                <li class="ingredientesDisponibles">oregano</li>
-                <li class="ingredientesDisponibles">curry</li>
-            </ul>
-        </div>
-        <div class="grid-item"><p class="menu_option">Hueco</p><img src="~/images/Iconos/Salsas.jpg" />
-        </div>
-        <div class="grid-item"><p class="menu_option">Hueco</p><img src="~/images/Iconos/panes.jpg" />
-        </div>
-
-        <div>
-            <a asp-controller="RecetasController" asp-action="Buscar" method="post" name="buscarReceta" class="btn btn-default">Buscar Receta</a>
-            //TODO:ASOCIAR EL BOTON A LA ACCION Y RECOPILAR PARAMETROS.
-        </div>
-    </div>
-
-</div>
-
+</form>
 <script src="~/js/menu_principal.js"></script>

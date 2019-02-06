@@ -4,8 +4,8 @@ body {
     padding-top: 50px;
     padding-bottom: 20px;
     background-image: url(../images/backgroundclaro.png);
-    background-repeat:no-repeat;
-    backface-visibility:hidden;
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
 }
 
 /* Wrapping element */
@@ -41,33 +41,30 @@ body {
 
 
 
-.Ingredientes{
-   
-    margin:-37px;
-    padding:31px;
-    background-repeat:no-repeat;
-    font-family:gabriola;
-    text-decoration:solid;
-    height:100px;
-   
-    
-    
+.Ingredientes {
+    margin: -37px;
+    padding: 31px;
+    background-repeat: no-repeat;
+    font-family: gabriola;
+    text-decoration: solid;
+    height: 100px;
 }
+
 #fondofiltros {
     background-color: #c0c0c0;
-    opacity: 0.6;
+    opacity: 0.8;
     background-size: contain;
-    
+    width:20%;
 }
 
-#botonarriba{
-    float:right;
+#botonarriba {
+    float: right;
 }
 
-#logo{
-    background-image:url(../images/generatedtexttitulo.jpg);
-    width:550px;
-    height:55px;
+#logo {
+    background-image: url(../images/generatedtexttitulo.jpg);
+    width: 550px;
+    height: 55px;
 }
 /*#gridentero {
 
@@ -84,12 +81,12 @@ body {
 }
 
 .menu_option {
-    transition: all 2s;
+    transition: all 4s;
 }
 
-.menu_option:hover {
-    color: red;
-}
+
+
+
 .btn {
     position: absolute;
     right: 16px;
@@ -104,24 +101,23 @@ body {
 }*/
 
 .grid-item {
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    /*border: 1px solid rgba(0, 0, 0, 0.8);*/
     min-width: 5px;
     min-height: 5px;
     /*padding: 20px;*/
     text-align: center;
     -webkit-transition: min-width 2s, min-height 4s;
-    transition: min-width 2s, min-height 4s;
-    
+    transition: min-width 3s, min-height 5s;
 }
 
-.grid-item ul {
-    visibility: hidden;
-    transition: visibility 1s;
-}
+    .grid-item ul {
+        visibility: hidden;
+        transition: visibility 1s;
+    }
 
-.grid-item:hover ul {
-    visibility: visible;
-}
+    .grid-item:hover ul {
+        visibility: visible;
+    }
 
 .col-md-9 {
     display: grid;
@@ -129,22 +125,79 @@ body {
     background-color: #2196F3;
     padding: 10px;
 }
+
 #backgroundIngredientes {
     background-image: url('../images/fondo blanco iconos.bmp');
     background-repeat: no-repeat;
     opacity: 0.6;
     
 }
+
 .grid-item:hover {
     min-width: 300px;
     min-height: 300px;
 }
 
-.ingredientesDisponibles {
+#ingredientesDisponibles {
     transition: all 2s;
 }
 
-    .ingredientesDisponibles:hover {
-        color: blue;
-    }
 
+
+
+/*Vista Buscar*/
+
+#recetaBuscar {
+    float: left;
+    width: 25%;
+    
+}
+
+.content {
+    background-color: white;
+    padding: 10px;
+}
+
+#rowbuscar:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Add padding BETWEEN each column */
+#rowbuscar,
+#row > #recetaBuscar {
+    padding: 8px;
+}
+
+#rowbuscar {
+    margin: 8px -16px;
+}
+
+/*vista detalles*/
+#textoDetalles {
+    background-color: white;
+    padding: 10px;
+    float:right;
+    
+}
+
+#fotodetalles {
+    background-color: white;
+    padding: 14px;
+   
+}
+
+ul {
+    list-style: none;
+}
+
+#infoAbout {
+    float: left;
+    width: 25%;
+}
+
+#infoContact {
+    float: left;
+    width: 25%;
+  
+}

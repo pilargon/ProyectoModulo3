@@ -2,7 +2,7 @@
 
 namespace QueTengoEnMiNevera.Data.Migrations
 {
-    public partial class fondobody : Migration
+    public partial class _2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

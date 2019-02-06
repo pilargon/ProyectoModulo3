@@ -52,12 +52,12 @@ namespace QueTengoEnMiNevera.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Buscar([FromQuery] string[] ingrediente)
+        public async Task<IActionResult> Buscar([FromQuery] string[] ingrediente,string[]filtro)
         {
-
-            List<Receta> recetas = await _services.BuscarRecetasPorIngredientes(ingrediente);
+            List<Receta> recetas = await _services.BuscarRecetasPorIngredientes(ingrediente,filtro);
             return View(recetas);
         }
+
 
         // POST: Recetas/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 

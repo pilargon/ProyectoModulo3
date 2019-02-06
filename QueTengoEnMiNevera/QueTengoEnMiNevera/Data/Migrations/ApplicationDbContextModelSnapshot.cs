@@ -255,7 +255,7 @@ namespace QueTengoEnMiNevera.Data.Migrations
 
                     b.Property<string>("Nombre");
 
-                    b.Property<int>("Tiempo");
+                    b.Property<string>("Tiempo");
 
                     b.Property<string>("Tipo");
 

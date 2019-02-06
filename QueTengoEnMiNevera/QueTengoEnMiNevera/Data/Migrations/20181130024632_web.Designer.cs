@@ -10,14 +10,14 @@ using QueTengoEnMiNevera.Data;
 namespace QueTengoEnMiNevera.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181119115421_fondobody")]
-    partial class fondobody
+    [Migration("20181130024632_web")]
+    partial class web
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.3-rtm-32065")
+                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -192,6 +192,8 @@ namespace QueTengoEnMiNevera.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Mail");
+
                     b.Property<string>("Nombre");
 
                     b.Property<string>("Password");
@@ -199,6 +201,69 @@ namespace QueTengoEnMiNevera.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Cliente");
+                });
+
+            modelBuilder.Entity("QueTengoEnMiNevera.Models.Ingrediente", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Foto");
+
+                    b.Property<string>("Nombre");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Ingrediente");
+                });
+
+            modelBuilder.Entity("QueTengoEnMiNevera.Models.IngredienteReceta", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("IngredienteId");
+
+                    b.Property<int>("RecetaId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IngredienteId");
+
+                    b.HasIndex("RecetaId");
+
+                    b.ToTable("IngredienteReceta");
+                });
+
+            modelBuilder.Entity("QueTengoEnMiNevera.Models.Receta", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Calorias");
+
+                    b.Property<string>("Explicacion");
+
+                    b.Property<string>("Foto");
+
+                    b.Property<string>("IngredientePrincipal");
+
+                    b.Property<string>("IngredientesSecundarios");
+
+                    b.Property<string>("IngredientesTerciarios");
+
+                    b.Property<string>("Nombre");
+
+                    b.Property<string>("Tiempo");
+
+                    b.Property<string>("Tipo");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Receta");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -243,6 +308,19 @@ namespace QueTengoEnMiNevera.Data.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser")
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("QueTengoEnMiNevera.Models.IngredienteReceta", b =>
+                {
+                    b.HasOne("QueTengoEnMiNevera.Models.Ingrediente", "Ingrediente")
+                        .WithMany("IngredienteRecetas")
+                        .HasForeignKey("IngredienteId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("QueTengoEnMiNevera.Models.Receta", "Receta")
+                        .WithMany("IngredienteRecetas")
+                        .HasForeignKey("RecetaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

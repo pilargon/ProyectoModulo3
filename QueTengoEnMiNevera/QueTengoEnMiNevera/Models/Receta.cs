@@ -10,7 +10,7 @@ namespace QueTengoEnMiNevera.Models
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Calorias { get; set; }
-        public int Tiempo { get; set; } // TODO: pasar de ints de minutos a un TimeSpan
+        public string Tiempo { get; set; } // TODO: pasar de ints de minutos a un TimeSpan
         public string Explicacion { get; set; }
         public string Tipo { get; set; }
         public string Foto { get; set; }
